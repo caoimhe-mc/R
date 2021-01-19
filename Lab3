@@ -1,0 +1,32 @@
+bricks <- pnorm(1.7, mean = 2, sd = 0.1)
+bricks1 <- (pnorm(2.3, mean = 2, sd = 0.1))
+scrap <- 1- (bricks1 - bricks)
+W <- qnorm(p = 0.95, mean = 2, sd=0.1, lower.tail = FALSE, log.p = FALSE)
+
+variables <- read.table("C:/Users/Caoimhe/Documents/College/Second Year/Statistics/Labs/variables.txt", header = TRUE)
+variables <- data.frame(variables)
+data <- summary(variables$var2)
+print(data)
+y <- sd(variables$var2)
+error1 <- qnorm(0.05)*((y)/sqrt(300))
+error <- 1.645*((19.91025)/sqrt(300))
+left <- 20.078-error
+left1 <- 20.078 + error1
+hist(variables$var1)
+hist(variables$var2)
+
+xbar <- mean(variables[,2])
+s <- sd(variables[,2])
+z <- qnorm(0.95)
+n <- length(variables[,2])
+lower <- xbar - z*(s/sqrt(n))
+
+f <-  pexp(6, rate = 0.20)
+g <- pexp(8, rate = 0.20) 
+prob <- g-f
+T <- qexp(0.99, rate=0.2)
+call <- pexp(q=0.1, rate=5, lower.tail=TRUE, log.p = FALSE)
+
+
+pweibull(q=3, shape=1.5, scale=2, lower.tail = FALSE, log.p=FALSE)
+qweibull(p=0.95, shape=1.5, scale=2, lower.tail = TRUE, log.p=FALSE)
