@@ -1,0 +1,15 @@
+lab <- read.table("C:/Users/Caoimhe/Documents/College/3) Third Year/Measurement & Instrumentation/Labs/DoE/Lab.txt", header = TRUE, colClasses = c("factor", "factor", "factor", "numeric"))
+summary(lab)
+hist(lab$Time, xlab = "Time of Flight", main = "Histogram of Frequency vs Time of Flight")
+three.way <- aov(Time ~ Rotor + Leg + Paper, data = lab)
+summary(three.way)
+interaction <- aov(Time ~ Rotor*Leg*Paper, data = lab)
+summary(interaction)
+plot(three.way, 1)
+
+qqnorm(three.way$residuals)
+qqline(three.way$residuals)
+
+boxplot(Time ~ Rotor+Leg+Paper, xlab='Variation', ylab='Time', data=lab)
+attributes(three.way)
+plot(three.way$fitted.values, three.way$residuals, xlab="Fitted Values", ylab="Residuals")
