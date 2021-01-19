@@ -1,0 +1,15 @@
+bin.samp <- rbinom(n=1, size=100, prob=0.55)
+dbinom(x=2, size=3, prob=0.4)
+pbinom(q=2, size= 3, prob= 0.4, lower.tail = TRUE)
+dbinom(x=2, size=3, prob=0.5)
+dbinom(x=0, size=10, prob=0.4)
+dhyper(x=0, m=12,n=18, k=10)
+phyper(q=7, m=12, n=18, k=10, lower.tail = FALSE, log.p = FALSE)
+phyper(q=7, m=12, n=18, k=10, lower.tail = FALSE)
+
+ppois(q = 91000, lambda = 90000, lower.tail = FALSE)
+rpois(n = 7, lambda=90000)
+x <- (89678+89993+89861+89992+90054+89903+89592)*(2.1)
+
+ppois(q=451000, lambda=450000, lower.tail = FALSE, log.p = FALSE)
+ppois(q=89500, lambda=90000, lower.tail = FALSE, log.p = FALSE)
